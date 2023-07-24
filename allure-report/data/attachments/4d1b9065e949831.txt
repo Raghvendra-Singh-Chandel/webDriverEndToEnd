@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "li .add_to_cart_button"
+}
