@@ -98,7 +98,6 @@ class checkoutItems {
         await this.companyName.setValue(faker.company.name(),{locale: "en"})
         await this.CountryOrRegeion.click()
         const totalCountry = await this.selectCountry.length
-        // console.log("Total country:",totalCountry)
         const random_country = await this.navComponents.getRandomNumber(totalCountry)
         console.log("random value here", random_country)
         await this.selectCountry[random_country].click()
@@ -106,18 +105,22 @@ class checkoutItems {
         await this.streetAddress1.setValue(faker.location.streetAddress({useFullAddress: true, country: country}))
         const city = faker.location.city({country: country})
         await this.townOrCity.setValue(city)
-        // if (await this.province.isDisplayed()) {
-        //     await this.province.click()
-        //     await this.selectProvince.click()
-        // }
-       
+        const totalState = await this.selectCountry.length
+        const random_state = await this.navComponents.getRandomNumber(totalState)
+        await browser.pause(3000)
+        if (await this.province.isDisplayed()) {
+            await this.province[random_state].click()
+            await this.selectProvince.click()
+        }
         await this.postalCode.setValue(faker.location.zipCode())
         await this.phoneNumber.setValue(faker.phone.number('##########'))
         await this.emailAddress.setValue(faker.internet.email({firstName:firstName, lastName:lastName}))
         await this.accountUsername.setValue(firstName+"_"+lastName+"_")
         await this.createAccPass.setValue("Test@123#!")
         await this.orderComment.setValue(faker.lorem.sentences(2),{locale: "en"})
-        // await this.placeOrder.click()
+        await this.placeOrder.click()
+        
+       
 
 
 
