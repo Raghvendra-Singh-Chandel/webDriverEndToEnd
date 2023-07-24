@@ -23,5 +23,5 @@ jobs:
       if: always()
       with:
         name: wdio-report
-        path: wdio-report/
+        path: allure-reults/
         retention-days: 30

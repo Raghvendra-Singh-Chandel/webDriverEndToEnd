@@ -58,7 +58,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-          binary: '/path/to/chrome/binary',
+          args: ['--headless'],
         },
     }],
     
