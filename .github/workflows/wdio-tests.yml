@@ -23,5 +23,6 @@ jobs:
       if: always()
       with:
         name: wdio-report
+        run: allure-generate && allure open
         path: ./allure-report
         retention-days: 30
