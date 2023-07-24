@@ -55,12 +55,21 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-          args: ['--headless'],
-        },
-    }],
+    capabilities: [
+        {
+          browserName: 'chrome',
+          'goog:chromeOptions': {
+            args: ['--headless'], // Optional, use '--headless' for Chrome headless mode
+          },
+        }
+        // {
+        //   browserName: 'firefox',
+        //   'moz:firefoxOptions': {
+        //     // Add any additional Firefox-specific options if needed
+        //   },
+        // },
+        // // Add more capabilities for other browsers if needed
+      ],
     
 
     //
@@ -110,7 +119,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: ['selenium-standalone'],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
