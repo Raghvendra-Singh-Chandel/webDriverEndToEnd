@@ -88,6 +88,7 @@ class checkoutItems {
         await browser.url('/checkout')
         
         // await expect(browser).toHaveUrlContaining('/checkout/',{timeout:40000})
+        await this.firstName.waitForDisplayed({timeout: 60000})
         await expect(this.firstName).toBeDisplayed()
         
         const firstName = faker.person.firstName('female'| 'male')
